@@ -3,12 +3,15 @@ import fresh_tomatoes
 import tmdbsimple as tmdb
 import httplib
 import simplejson
-tmdb.API_KEY='api_key_placeholder'
+
+#replace this key
+tmdb.API_KEY='Placeholder_API_KEY'
 # getting youtube trailer url using tmdb api
 def get_youtube_url(movie_id):
     conn = httplib.HTTPSConnection("api.themoviedb.org")
     payload = "{}"
-    request = "/3/movie/" + str(movie_id) + "/videos?language=en-US&api_key="+str(tmdb.API_KEY);
+    request = "/3/movie/" + str(movie_id) + \
+            "/videos?language=en-US&api_key="+str(tmdb.API_KEY);
     conn.request("GET", request, payload)
     res = conn.getresponse()
     data = res.read()
@@ -24,11 +27,12 @@ responses = tmdb.Discover().movie(year="2017",page="1")
 results = responses['results']
 
 movies =[] #declaring movies list to pass to fresh_tomatoes.py
-
-for movie_count in range(6):  #you can change the number of movies displayed by chaging the movie_count value
+#you can change the num of movies displayed by chaging the movie_count value
+for movie_count in range(20):
     movie_details= results[movie_count]
     #getting stuff ready for calling fresh_tomatoes
-    poster="image.tmdb.org/t/p/w370_and_h556_bestv2/"+movie_details['poster_path']
+    temp_url="https://image.tmdb.org/t/p/w370_and_h556_bestv2/"
+    poster=temp_url+movie_details['poster_path']
     movie_id=movie_details['id']
     youtube_url = get_youtube_url(movie_id)
     summary = movie_details['overview']
