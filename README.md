@@ -5,8 +5,13 @@ This project is a part of the Udacity FUll Stack Developer course and this proje
 
 # Installation and Prerequisites:
 
-A python wrapper tmdbsimple was used in this project, you can download tmdbsimple using
+A python wrapper tmdbsimple and simplejson were used in this project.
+
+you can download tmdbsimple using PIP.
 >pip install tmdbsimple
+
+and simplejson using
+>pip install simplejson
 
 Clone or download the project.
 > git clone github.com/neurotoxins/udacity.git
