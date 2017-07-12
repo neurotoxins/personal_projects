@@ -1,8 +1,5 @@
 # Project 1: Movie Trailer Website
 
-This project is a part of the Udacity FUll Stack Developer course and this project demostrates using python to generate a movie website.
-
-
 # Installation and Prerequisites:
 
 A python wrapper tmdbsimple and simplejson were used in this project.
